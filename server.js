@@ -1,7 +1,9 @@
 var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-twitter').Strategy;
-var keys = require("./config/auth.js");
+
+
+var port = process.env.PORT || 3000;
 
 // Configure the Twitter strategy for use by Passport.
 //
@@ -11,9 +13,9 @@ var keys = require("./config/auth.js");
 // with a user object, which will be set at `req.user` in route handlers after
 // authentication.
 passport.use(new Strategy({
-    consumerKey: 	keys.TWITTER_CONSUMER_KEY,
-    consumerSecret: keys.TWITTER_CONSUMER_SECRET,
-    callbackURL: keys.TWITTER_CALLBACK
+    consumerKey: process.env.CONSUMER_KEY,
+    consumerSecret: process.env.CONSUMER_SECRET,
+    callbackURL: 'http://127.0.0.1:3000/login/twitter/return'
   },
   function(token, tokenSecret, profile, cb) {
     // In this example, the user's Twitter profile is supplied as the user
@@ -69,10 +71,10 @@ app.get('/',
     res.render('home', { user: req.user });
   });
 
-/*app.get('/login',
+app.get('/login',
   function(req, res){
     res.render('login');
-  });*/
+  });
 
 app.get('/login/twitter',
   passport.authenticate('twitter'));
@@ -89,4 +91,4 @@ app.get('/profile',
     res.render('profile', { user: req.user });
   });
 
-app.listen(3000);
+app.listen(port);
