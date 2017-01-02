@@ -90,6 +90,7 @@ app.get('/login/twitter/return',
 app.get('/profile',
   require('connect-ensure-login').ensureLoggedIn(),
   function(req, res){
+    console.log(req.user)
     res.render('profile', { user: req.user });
   });
 
