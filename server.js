@@ -31,9 +31,6 @@ app.use('/assets', express.static(__dirname + '/assets'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-mongoose.connect(process.env.MONGO_DATABASE);
-apiController(app);
-
 // Use application-level middleware for common functionality, including
 // logging, parsing, and session handling.
 app.use(require('morgan')('combined'));
@@ -46,6 +43,8 @@ app.use(require('express-session')({ secret: process.env.SESSION_SECRET, resave:
 app.use(passport.initialize());
 app.use(passport.session());
 
+mongoose.connect(process.env.MONGO_DATABASE);
+apiController(app);
 
 // Define routes.
 app.get('/',
