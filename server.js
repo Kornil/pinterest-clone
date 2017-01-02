@@ -49,6 +49,7 @@ var app = express();
 var mongoose = require('mongoose');
 
 // Configure view engine to render EJS templates.
+app.use('/assets', express.static(__dirname + '/assets'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
