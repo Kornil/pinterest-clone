@@ -14,7 +14,7 @@ var port = process.env.PORT || 3000;
 passport.use(new Strategy({
     consumerKey: process.env.TWITTER_CONSUMER_KEY,
     consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-    //callbackURL: "https://pinterest-kornil.herokuapp.com//login/twitter/return"
+    callbackURL: "https://pinterest-kornil.herokuapp.com/login/twitter/return"
   },
   function(token, tokenSecret, profile, cb) {
     // In this example, the user's Twitter profile is supplied as the user
