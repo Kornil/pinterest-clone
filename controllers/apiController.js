@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 module.exports = function(app) {
     app.post('/profile', function(req, res){
         var newImage = Image({
-               username: req.user,
+               username: "test",
                text: req.body.text,
            });
            newImage.save(function(err) {
