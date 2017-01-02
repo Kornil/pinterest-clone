@@ -10,6 +10,7 @@ module.exports = function(app) {
         var newImage = Image({
                username: "test",
                imageLink: req.body.text,
+               likes: 0
            });
            newImage.save(function(err) {
                if (err) throw err;
