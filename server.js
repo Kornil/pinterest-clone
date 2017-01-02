@@ -46,10 +46,13 @@ passport.deserializeUser(function(obj, cb) {
 
 // Create a new Express application.
 var app = express();
+var mongoose = require('mongoose');
 
 // Configure view engine to render EJS templates.
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
+mongoose.connect(process.env.MONGO_DATABASE);
 
 // Use application-level middleware for common functionality, including
 // logging, parsing, and session handling.
