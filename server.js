@@ -73,18 +73,18 @@ app.get('/',
     res.render('home', { user: req.user });
   });
 
-app.get('/login',
+/*app.get('/login',
   function(req, res){
     res.render('login');
-  });
+  });*/
 
-app.get('/login/twitter',
+app.get('/login',
   passport.authenticate('twitter'));
 
 app.get('/login/twitter/return', 
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/profile');
   });
 
 app.get('/profile',
