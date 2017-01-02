@@ -88,6 +88,10 @@ app.get('/login/twitter/return',
     res.redirect('/profile');
   });
 
+  app.get('/index', function(req, res){
+    res.redirect('/');
+  })
+
 app.get('/profile',
   require('connect-ensure-login').ensureLoggedIn(),
   function(req, res){
