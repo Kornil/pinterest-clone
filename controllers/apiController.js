@@ -9,7 +9,7 @@ module.exports = function(app) {
     app.post('/profile', function(req, res){
         var newImage = Image({
                username: "test",
-               imageLink: req.body.text,
+               imageLink: req.body.imageLink,
                likes: 0
            });
            newImage.save(function(err) {
