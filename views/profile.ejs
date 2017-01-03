@@ -55,7 +55,7 @@
       </div>
     <div class="col-xs-6 col-md-8">
       <h3>Your images</h3>
-      <div class="grid">
+      <div class="row">
     <% for(var i=0; i < images.length; i++) { %>
           <div class="thumbnail">
             <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
@@ -69,22 +69,6 @@
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-    <script>
-    $(document).ready(function(){
-    // layout Masonry after each image loads
-    $(".thumbnail_image").imagesLoaded().progress( function() {
-      $('.grid').masonry({
-      columnWidth: 200,
-      gutter: 0,
-      isFitWidth: true,
-      columnWidth: 200,
-      itemSelector: '.thumbnail'
-      });
-    });
-    });
-    </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
