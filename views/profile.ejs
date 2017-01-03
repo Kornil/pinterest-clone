@@ -76,7 +76,7 @@
       "columnWidth": 200, "gutter": 0,"isFitWidth": true
     });
     // layout Masonry after each image loads
-    $grid.imagesLoaded().progress( function() {
+    $(".thumbnail_image").imagesLoaded().progress( function() {
       $grid.masonry('layout');
     });
     </script>
