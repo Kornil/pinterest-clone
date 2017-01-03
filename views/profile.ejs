@@ -49,15 +49,15 @@
             <span class="input-group-addon" id="basic-addon3">https://</span>
             <input type="url" name="imageLink" class="form-control" id="basic-url">
           </div>
-          <input type="submit" class="btn btn-default">Submit</input>
+          <input type="submit" class="btn btn-default" value="Submit">
         </form>
         </div>
       </div>
     <div class="col-xs-6 col-md-8">
       <h3>Your images</h3>
-      <div class="row">
+      <div class="grid" data-masonry='{ "itemSelector": ".grid-item" }'>
     <% for(var i=0; i < images.length; i++) { %>
-        <div class="col-xs-6 col-md-3"> 
+        <div class="grid-item"> 
           <div class="thumbnail">
             <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
             <h4> <%= images[i].title %> </h4>
@@ -71,6 +71,7 @@
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://masonry.desandro.com/masonry.pkgd.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
