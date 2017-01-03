@@ -37,7 +37,7 @@
     <div class="container">
 
       <div class="row">
-        <div class="grid" data-masonry-options='{ "columnWidth": 200, "gutter": 0,"isFitWidth": true}'>
+        <div class="grid">
         <% for(var i=0; i < images.length; i++) { %>
               <div class="thumbnail">
                 <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
@@ -56,12 +56,14 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
     <script>
+    $(document).ready(function(){
     var $grid = $('.grid').masonry({
       "columnWidth": 200, "gutter": 0,"isFitWidth": true
     });
     // layout Masonry after each image loads
-    $grid.imagesLoaded().progress( function() {
+    $(".thumbnail_image").imagesLoaded().progress( function() {
       $grid.masonry('layout');
+    });
     });
     </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

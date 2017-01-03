@@ -21,7 +21,7 @@ p {
   margin: 0 auto;
 }
 .thumbnail {
-  max-width: 50%;
+  max-width: 30%;
   float: left;
   margin: 0;
   display: inline-block;
