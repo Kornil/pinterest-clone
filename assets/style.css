@@ -17,4 +17,13 @@ p {
 .likes {
   float: right;
 }
-.grid-item { width: 250px; }
+.grid-item { 
+  width: 2000px;
+  height: 150px;
+  float: left;
+}
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
