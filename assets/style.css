@@ -17,8 +17,7 @@ p {
 .likes {
   float: right;
 }
-.grid-item { 
-  width: 2000px;
+.grid-item {
   height: 150px;
   float: left;
 }
