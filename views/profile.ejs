@@ -73,13 +73,14 @@
     <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
     <script>
     $(document).ready(function(){
-    var $grid = $('.grid').masonry({
-      "columnWidth": 200, "gutter": 0,"isFitWidth": true
-    });
     // layout Masonry after each image loads
     $(".thumbnail_image").imagesLoaded().progress( function() {
-      $grid.masonry({
-      "columnWidth": 200, "gutter": 0,"isFitWidth": true
+      $('.grid').masonry({
+      columnWidth: 200,
+      gutter: 0,
+      isFitWidth: true,
+      columnWidth: 200,
+      itemSelector: '.thumbnail'
       });
     });
     });
