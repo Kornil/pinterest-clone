@@ -24,4 +24,5 @@ p {
   max-width: 30%;
   float: left;
   margin: 0;
+  display: inline-block;
 }
