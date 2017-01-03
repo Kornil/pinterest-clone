@@ -23,4 +23,5 @@ p {
 .thumbnail {
   float: left;
   max-width: 25%;
+  height: 240px;
 }
