@@ -52,7 +52,7 @@ app.get('/',
   function(req, res){
     Image.find({}, function(err, images){
       if (err) throw err;      
-        res.render('profile', { user: req.user, images: images});
+        res.render('home', { user: req.user, images: images});
     })
   });
 
