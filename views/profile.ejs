@@ -42,15 +42,14 @@
 			<input type="url" name="imageLink">
 			<input type="submit">
 		</form>
-    <p> <%= images %> </p>
 
     <div class="row">
     <% for(var i=0; i < images.length; i++) { %>
         <div class="col-xs-6 col-md-3"> 
           <div class="thumbnail">
-            <img src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
+            <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
             <h3> <%= images[i].title %> </h3>
-            <p> <%= images[i].likes %> </p>
+            <p>Likes: <%= images[i].likes %> </p>
           </div>
         </div>
     <% } %>

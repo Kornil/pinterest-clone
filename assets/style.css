@@ -5,7 +5,10 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
-
 .navbar-nav {
   float: right;
+}
+.thumbnail_image {
+  height: 180px;
+  width: 100%;
 }
