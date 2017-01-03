@@ -70,7 +70,7 @@ app.get('/profile',
   require('connect-ensure-login').ensureLoggedIn(),
   function(req, res){
     Image.find({}, function(err, images){
-      if err throw err;
+      if (err) throw err;
       return images
     })
     res.render('profile', { user: req.user, images: images});
