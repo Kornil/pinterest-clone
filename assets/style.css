@@ -17,10 +17,8 @@ p {
 .likes {
   float: right;
 }
-.grid-item {
-  height: 150px;
-  float: left;
-}
+.grid-sizer,
+.grid-item { width: 25%; }
 .grid:after {
   content: '';
   display: block;
