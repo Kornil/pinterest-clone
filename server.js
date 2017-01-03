@@ -71,7 +71,7 @@ app.get('/profile',
   function(req, res){
     Image.find({}, function(err, images){
       if (err) throw err;      
-        res.render('/profile', { user: req.user, images: images});
+        res.render('/profile', { user: req.user });
     })
   });
 
