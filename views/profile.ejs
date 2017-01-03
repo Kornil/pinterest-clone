@@ -39,13 +39,16 @@
     </p>-->
     <div class="row">
       <div class="col-xs-6 col-md-3">
-        <form method="post" action="/profile">
-          <input type="text" name="title" value="title">
-          <input type="url" name="imageLink" value="url of your image">
+        <h3>Submit an image!</h3>
+        <form class="input-group" method="post" action="/profile">
+          <input type="text" name="title" class="form-control" placeholder="Title">
+          <span class="input-group-addon" id="basic-addon3">https://</span>
+          <input type="url" name="imageLink" class="form-control" id="basic-url">
           <input type="submit">
         </form>
       </div>
     <div class="col-xs-6 col-md-9">
+      <h3>Your images</h3>
     <div class="row">
     <% for(var i=0; i < images.length; i++) { %>
         <div class="col-xs-6 col-md-3"> 
