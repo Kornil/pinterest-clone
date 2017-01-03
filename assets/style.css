@@ -17,7 +17,6 @@ p {
 .likes {
   float: right;
 }
-.grid-item { width: 25%; }
 .masonry {
   margin: 0 auto;
 }
