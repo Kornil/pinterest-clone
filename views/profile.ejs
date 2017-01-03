@@ -28,7 +28,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="container">
+    <div class="container-fluid">
     <!--<p>
     ID: <%= user.id %><br/>
     Username: <%= user.username %><br/>
@@ -55,8 +55,7 @@
       </div>
     <div class="col-xs-6 col-md-8">
       <h3>Your images</h3>
-      <div class="grid" data-masonry='{ "itemSelector": ".grid-item", percentPosition: true, "columnWidth": 200 }'>
-      <div class="grid-sizer"></div>
+      <div class="masonry js-masonry" data-masonry-options='{ "columnWidth": 350, "gutter": 0,"isFitWidth": true}'>
     <% for(var i=0; i < images.length; i++) { %>
         <div class="grid-item"> 
           <div class="thumbnail">
