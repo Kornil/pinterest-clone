@@ -44,17 +44,18 @@
 		</form>
     <p> <%= images %> </p>
 
+    <div class="row">
     <% for(var i=0; i < images.length; i++) { %>
-      <div class="row">
         <div class="col-xs-6 col-md-3"> 
           <div class="thumbnail">
             <img src=<%= images.imageLink %> alt=<%= images.title %> >
             <h3><%= images.title %></h3>
-            <button> <%= images.likes %> </button>
+            <p> <%= images.likes %> </p>
           </div>
         </div>
-      </div>
     <% } %>
+    </div>
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
