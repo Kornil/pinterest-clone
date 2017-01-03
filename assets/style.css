@@ -20,6 +20,6 @@ p {
 .masonry {
   margin: 0 auto;
 }
-.thumbnail {
+.item {
   float: left;
 }
