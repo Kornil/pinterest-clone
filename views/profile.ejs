@@ -78,7 +78,9 @@
     });
     // layout Masonry after each image loads
     $(".thumbnail_image").imagesLoaded().progress( function() {
-      $grid.masonry('layout');
+      $grid.masonry({
+      "columnWidth": 200, "gutter": 0,"isFitWidth": true
+      });
     });
     });
     </script>
