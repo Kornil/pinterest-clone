@@ -20,8 +20,3 @@ p {
 .masonry {
   margin: 0 auto;
 }
-.thumbnail {
-  max-width: 50%;
-  margin: 0;
-  display: inline-block;
-}
