@@ -41,19 +41,19 @@
       <div class="col-xs-6 col-md-4">
         <h3>Submit an image!</h3>
         <form method="post" action="/profile">
-        <div class="input-group">
-          <input type="text" name="title" class="form-control" placeholder="Title">
+          <div class="input-group">
+            <input type="text" name="title" class="form-control" placeholder="Title">
           </div>
           <div class="input-group">
-          <span class="input-group-addon" id="basic-addon3">https://</span>
-          <input type="url" name="imageLink" class="form-control" id="basic-url">
-          <div>
+            <span class="input-group-addon" id="basic-addon3">https://</span>
+            <input type="url" name="imageLink" class="form-control" id="basic-url">
+          </div>
           <input type="submit" class="btn btn-default">Submit</input>
         </form>
       </div>
     <div class="col-xs-6 col-md-8">
       <h3>Your images</h3>
-    <div class="row">
+      <div class="row">
     <% for(var i=0; i < images.length; i++) { %>
         <div class="col-xs-6 col-md-3"> 
           <div class="thumbnail">
