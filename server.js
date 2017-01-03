@@ -72,7 +72,7 @@ app.get('/index', function(req, res){
 app.get('/profile',
   require('connect-ensure-login').ensureLoggedIn(),
   function(req, res){
-    Image.find({}, function(err, images){
+    Image.find({ 'username': req.user.username }, function(err, images){
       if (err) throw err;      
         res.render('profile', { user: req.user, images: images});
     })

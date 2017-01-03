@@ -45,7 +45,6 @@
 
     <div class="row">
     <% for(var i=0; i < images.length; i++) { %>
-    <% if (image[i].user === user.username) { %>
         <div class="col-xs-6 col-md-3"> 
           <div class="thumbnail">
             <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
@@ -53,7 +52,6 @@
             <p>Likes: <%= images[i].likes %> </p>
           </div>
         </div>
-        <% } %>
     <% } %>
     </div>
     </div>
