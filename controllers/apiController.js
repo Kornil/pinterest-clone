@@ -14,7 +14,7 @@ module.exports = function(app) {
            });
            newImage.save(function(err) {
                if (err) throw err;
-               res.send('Success');
+               res.redirect('/profile');
            });
     })
 };
