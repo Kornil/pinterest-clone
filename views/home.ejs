@@ -39,7 +39,7 @@
       <div class="row">
         <div class="grid">
         <% for(var i=0; i < images.length; i++) { %>
-              <div class="thumbnail">
+              <div class="thumbnail grid-item">
                 <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
                 <h4> <%= images[i].title %> </h4>
                 <p class="username"><%= images[i].username %></p><p class="likes">Likes: <%= images[i].likes %> </p>
@@ -64,7 +64,7 @@
       gutter: 0,
       isFitWidth: true,
       columnWidth: 200,
-      itemSelector: '.thumbnail'
+      itemSelector: '.grid-item'
       });
     });
     });
