@@ -49,8 +49,11 @@ apiController(app);
 
 // Define routes.
 app.get('/',
-  function(req, res) {
-    res.render('home', { user: req.user });
+  function(req, res){
+    Image.find({}, function(err, images){
+      if (err) throw err;      
+        res.render('profile', { user: req.user, images: images});
+    })
   });
 
 app.get('/login',

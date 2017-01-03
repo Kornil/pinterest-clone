@@ -8,7 +8,7 @@ module.exports = function(app) {
 
     app.post('/profile', function(req, res){
         var newImage = Image({
-               username: "test",
+               username: req.user.username,
                title: req.body.title,
                imageLink: req.body.imageLink,
                likes: 0
