@@ -29,31 +29,35 @@
       </div>
     </nav>
     <div class="container">
-    <p>
+    <!--<p>
     ID: <%= user.id %><br/>
     Username: <%= user.username %><br/>
     Name: <%= user.displayName %><br/>
     <% if (user.emails) { %>
     Email: <%= user.emails[0].value %><br/>
     <% } %>
-    </p>
-		<form method="post" action="/profile">
-			<input type="text" name="title">
-			<input type="url" name="imageLink">
-			<input type="submit">
-		</form>
-
+    </p>-->
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <form method="post" action="/profile">
+          <input type="text" name="title" value="title">
+          <input type="url" name="imageLink" value="url of your image">
+          <input type="submit">
+        </form>
+      </div>
+    <div class="col-xs-6 col-md-9">
     <div class="row">
     <% for(var i=0; i < images.length; i++) { %>
         <div class="col-xs-6 col-md-3"> 
           <div class="thumbnail">
             <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
-            <h3> <%= images[i].title %> </h3>
+            <h4> <%= images[i].title %> </h4>
             <p class="likes">Likes: <%= images[i].likes %> </p>
             <div style="clear: both"></div>
           </div>
         </div>
     <% } %>
+    </div>
     </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
