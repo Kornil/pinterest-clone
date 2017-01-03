@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 var imageSchema = new Schema({
     username: String,
+    title: String,
     imageLink: String,
     likes: Number
 });
