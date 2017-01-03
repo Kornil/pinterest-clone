@@ -44,6 +44,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose.connect(process.env.MONGO_DATABASE);
+var Image = require('../models/imageModel');
 apiController(app);
 
 // Define routes.
@@ -68,7 +69,11 @@ app.get('/index', function(req, res){
 app.get('/profile',
   require('connect-ensure-login').ensureLoggedIn(),
   function(req, res){
-    res.render('profile', { user: req.user });
+    Image.find({}, function(err, images){
+      if err throw err;
+      return images
+    })
+    res.render('profile', { user: req.user, images: images});
   });
 
 app.listen(port);
