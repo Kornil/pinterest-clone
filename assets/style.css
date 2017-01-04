@@ -26,7 +26,7 @@ p {
   max-width: 20%;  
 }
 @media (max-width: 480px) {
-  .home{
+  .thumbnail, .home {
     max-width: 50%;
   }
 }
