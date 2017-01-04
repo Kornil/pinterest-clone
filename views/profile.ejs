@@ -72,14 +72,14 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-      if($("#basic-url").checkValidity() && $("#basic-url").val().length){
+      /*if($("#basic-url").checkValidity() && $("#basic-url").val().length){
         $("#submit").prop('disabled', false);
       }else{
         $("#submit").prop('disabled', true);
-      }
+      }*/
       function empty() {
         var x;
-        x = $("#submit").value;
+        x = document.getElementById("submit").value;
         if (x === "") {
           alert("Enter a valid URL");
           return false;
