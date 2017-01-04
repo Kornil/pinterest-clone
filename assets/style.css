@@ -23,8 +23,10 @@ p {
   height: 250px;
 }
 .home {
-  max-width: 20%;
-  @media only screen and (min-width : 480px) {
+  max-width: 20%;  
+}
+@media only screen and (min-width : 480px) {
+  .home{
     max-width: 50%;
   }
 }
