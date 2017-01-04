@@ -72,11 +72,13 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-    if ($("#basic-url").value){
-      $("#submit").attr("disabled", false);
-    }else{
-      $("#submit").attr("disabled", true);
-    }    
+    $('input').bind('input propertychange', function() {
+      if ($("#basic-url").value){
+        $("#submit").attr("disabled", false);
+      }else{
+        $("#submit").attr("disabled", true);
+      }
+    });
     </script>
   </body>
 </html>
