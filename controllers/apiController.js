@@ -16,11 +16,11 @@ module.exports = function(app) {
             if(!req.body || req.body.length === 0) {
                 console.log('request body not found');
                 return res.sendStatus(400);
-            }else{                
-                newImage.save(function(err) {
-                    if (err) throw err;
-                    res.redirect('/profile');
-                });
-            }
+            }              
+            newImage.save(function(err) {
+                if (err) throw err;
+                res.redirect('/profile');
+            });
+            
     })
 };
