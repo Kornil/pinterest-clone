@@ -19,9 +19,10 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/index">Pinterest Clone</a>
         </div>
-        <div id="navbar">
-          <ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#"><%= user.username %></a></li>
+        <div class="navbar-header pull-right">
+          <ul class="nav">
+            <!-- This works well for static text, like a username -->
+            <li class="navbar-text"><a href="#"><%= user.username %></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
