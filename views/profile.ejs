@@ -77,14 +77,16 @@
       }else{
         $("#submit").prop('disabled', true);
       }*/
-      function empty() {
-        var x;
-        x = document.getElementById("submit").value;
-        if (x === "") {
-          alert("Enter a valid URL");
-          return false;
-        };
-      }
+      $(document).ready(function() {
+        function empty() {
+          var x;
+          x = document.getElementById("submit").value;
+          if (x === "") {
+            alert("Enter a valid URL");
+            return false;
+          };
+        }
+      });
     </script>
   </body>
 </html>
