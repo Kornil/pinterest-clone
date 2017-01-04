@@ -73,7 +73,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
     $('input').bind('input propertychange', function() {
-      if ($("#basic-url").value){
+      if (!$("#basic-url").value){
         $("#submit").attr("disabled", false);
       }else{
         $("#submit").attr("disabled", true);
