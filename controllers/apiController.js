@@ -7,6 +7,7 @@ module.exports = function(app) {
     app.use(bodyParser.urlencoded({ extended: true }));
 
     app.post('/profile', function(req, res){
+        if (typeof req.body.title === 'string' || req.body.title instanceof String && req.body.imageLink.match(/\.(jpeg|jpg|gif|png)$/) != null){
         var newImage = Image({
                username: req.user.username,
                title: req.body.title,
@@ -17,5 +18,8 @@ module.exports = function(app) {
                if (err) throw err;
                res.redirect('/profile');
            });
+        }else{
+            alert("Please use a valid title and image url");
+        }
     })
 };
