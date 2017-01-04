@@ -44,11 +44,11 @@
         <h3>Submit an image!</h3>
         <form id="form" method="post" action="/profile">
           <div class="input-group">
-            <input type="text" name="title" class="form-control" placeholder="Title">
+            <input type="text" name="title" class="form-control" placeholder="Title" required>
           </div>
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon3">https://</span>
-            <input type="url" name="imageLink" class="form-control" id="basic-url">
+            <input type="url" name="imageLink" class="form-control" id="basic-url" required>
           </div>
           <button id="submit" type="submit" class="btn btn-default">Submit</button>
         </form>
@@ -72,12 +72,12 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-    $('input').bind('input propertychange', function() {
+    /*$('input').bind('input propertychange', function() {
       if($('#basic-url').value !== ''){
         $("#submit").attr("disabled", false);
       }
       $("#submit").attr("disabled", true);
-    });
+    });*/
     </script>
   </body>
 </html>
