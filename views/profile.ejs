@@ -50,7 +50,7 @@
             <span class="input-group-addon" id="basic-addon3">https://</span>
             <input type="url" name="imageLink" class="form-control" id="basic-url">
           </div>
-          <input id="submit" type="submit" class="btn btn-default" value="Submit">
+          <input id="submit" type="submit" class="btn btn-default" value="Submit" onClick="return empty()">
         </form>
         </div>
       </div>
@@ -76,6 +76,14 @@
         $("#submit").prop('disabled', false);
       }else{
         $("#submit").prop('disabled', true);
+      }
+      function empty() {
+        var x;
+        x = $("#submit").value;
+        if (x === "") {
+          alert("Enter a valid URL");
+          return false;
+        };
       }
     </script>
   </body>
