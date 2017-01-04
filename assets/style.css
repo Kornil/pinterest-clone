@@ -24,5 +24,7 @@ p {
 }
 .home {
   max-width: 20%;
-
+  @media only screen and (min-width : 480px) {
+    max-width: 50%;
+  }
 }
