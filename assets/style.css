@@ -11,8 +11,11 @@ body {
 p {
   font-size: 12px;
 }
+.user {
+  float: left;
+}
 .likes {
-  text-align: right;
+  float: right;
 }
 .thumbnail {
   float: left;
