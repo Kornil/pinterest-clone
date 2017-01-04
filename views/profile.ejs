@@ -74,9 +74,9 @@
     <script>
     $('input').bind('input propertychange', function() {
       if($.trim($('#basic-url').val()) == ''){
-        $("#submit").attr("disabled", false);
-      }else{
         $("#submit").attr("disabled", true);
+      }else{
+        $("#submit").attr("disabled", false);
       }
     });
     </script>
