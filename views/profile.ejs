@@ -42,7 +42,7 @@
       <div class="col-xs-6 col-md-4">
         <div class="jumbotron">
         <h3>Submit an image!</h3>
-        <form method="post" action="/profile">
+        <form id="form" method="post" action="/profile">
           <div class="input-group">
             <input type="text" name="title" class="form-control" placeholder="Title">
           </div>
@@ -72,21 +72,14 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-      /*if($("#basic-url").checkValidity() && $("#basic-url").val().length){
-        $("#submit").prop('disabled', false);
-      }else{
-        $("#submit").prop('disabled', true);
-      }*/
-      /*$(document).ready(function() {
-        function empty() {
-          var x;
-          x = document.getElementById("submit").value;
-          if (x === "") {
-            alert("Enter a valid URL");
-            return false;
-          };
-        }
-      });*/
+      $("#form").submit(function(ev){ev.preventDefault()});
+      $("#submit").on("click", function(){
+        var bootstrapValidator = $("#form").data('bootstrapValidator');
+        bootstrapValidator.validate();
+        if(bootstrapValidator.isValid())
+          $("#form").submit();
+        else return;
+      });
     </script>
   </body>
 </html>
