@@ -17,8 +17,9 @@ p {
 .thumbnail {
   float: left;
   max-width: 25%;
-  height: 240px;
+  height: 250px;
 }
 .home {
   max-width: 20%;
+
 }
