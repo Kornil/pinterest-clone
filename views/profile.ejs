@@ -16,13 +16,13 @@
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header pull-left">
           <a class="navbar-brand" href="/index">Pinterest Clone</a>
         </div>
         <div class="navbar-header pull-right">
           <ul class="nav pull-left">
             <!-- This works well for static text, like a username -->
-            <li class="navbar-text pull-left"><%= user.username %></li>
+            <li class="navbar-text pull-left"><a href="#"><%= user.username %></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
