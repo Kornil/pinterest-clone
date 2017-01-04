@@ -13,13 +13,14 @@ module.exports = function(app) {
                imageLink: req.body.imageLink,
                likes: 0
            });
-        newImage.save(function(err) {
-            if (err) throw err;
             if(!req.body || req.body.length === 0) {
                 console.log('request body not found');
                 return res.sendStatus(400);
+            }else{                
+                newImage.save(function(err) {
+                    if (err) throw err;
+                    res.redirect('/profile');
+                });
             }
-            res.redirect('/profile');
-        });
     })
 };
