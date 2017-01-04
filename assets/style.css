@@ -22,3 +22,8 @@ p {
   max-width: 25%;
   height: 240px;
 }
+.thumbnail-home {
+  float: left;
+  max-width: 20%;
+  height: 240px;
+}
