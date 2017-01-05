@@ -24,7 +24,7 @@ module.exports = function(app) {
         var Id = req.body.id || req.query.id;
         Image.findByIdAndRemove(Id, function(err){
             if (err) throw err;
-            res.redirect('/profile');
+            res.send('yay');
         });
     });
 };
