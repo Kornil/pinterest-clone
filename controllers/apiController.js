@@ -20,12 +20,9 @@ module.exports = function(app) {
             
     });
 
-    app.get('/profile/:id',function(req, res){
-        res.render('profile', { user: req.user, images: images});
-    });
-
-    app.delete('/profile/:id', function(req, res){
-        Image.findByIdAndRemove(req.params.id, function(err){
+    app.delete('/profile', function(req, res){
+        var Id = req.body.userId || req.query.userId;
+        Image.findByIdAndRemove(Id, function(err){
             if (err) throw err;
             res.redirect('/profile');
         });

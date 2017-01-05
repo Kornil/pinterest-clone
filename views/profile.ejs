@@ -62,10 +62,7 @@
       <h3>Your images</h3>
     <% for(var i=0; i < images.length; i++) { %>
           <div class="thumbnail">
-            <!--<i class="fa fa-times" aria-hidden="true"></i>-->
-            <form id="delete" method="delete" action="/profile/<%= images[i]._id %>">
-              <input type="submit" class="btn btn-default" value="&#xf011;"/>
-            </form>
+            <i id="<% images[i]._id %>" class="fa fa-times" aria-hidden="true"></i>
             <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
             <h4> <%= images[i].title %> </h4>
             <p class="likes"><i class="fa fa-heart" aria-hidden="true"></i> <%= images[i].likes %> </p>
@@ -80,12 +77,9 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-    /*$('input').bind('input propertychange', function() {
-      if($('#basic-url').value !== ''){
-        $("#submit").attr("disabled", false);
-      }
-      $("#submit").attr("disabled", true);
-    });*/
+    $('fa-times').on('click', function(){
+      $.delete( "profile", { id: $(this).attr('id') } );
+    })
     </script>
   </body>
 </html>
