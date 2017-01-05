@@ -19,11 +19,15 @@ module.exports = function(app) {
             });
             
     });
+
+    app.get('/delete/:id',function(req, res){
+        res.redirect('/profile');
+    });
+
     app.delete('/delete/:id', function(req, res){
-        var idToDelete = req.params.id;
         Image.findByIdAndRemove(req.params.id, function(err){
             if (err) throw err;
-            res.redirect('/profile');
+            res.send('deleted');
         });
     });
 };
