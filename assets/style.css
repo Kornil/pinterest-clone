@@ -18,6 +18,7 @@ p {
   float: left;
   max-width: 25%;
   height: 250px;
+  position: relative;
 }
 .home {
   max-width: 20%;  
@@ -30,6 +31,5 @@ p {
 .fa-times {
   position: absolute;
   right: 20px;
-  top: 20px;
   color: #bd081c;
 }
