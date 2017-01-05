@@ -12,15 +12,18 @@ module.exports = function(app) {
                title: req.body.title,
                imageLink: req.body.imageLink,
                likes: 0
-           });
-            if(!req.body || req.body.length === 0) {
-                console.log('request body not found');
-                return res.sendStatus(400);
-            }              
+           });            
             newImage.save(function(err) {
                 if (err) throw err;
                 res.redirect('/profile');
             });
             
-    })
+    });
+    app.delete('/delete/:id', function(req, res){
+        var idToDelete = req.params.id;
+        Image.findByIdAndRemove(req.params.id, function(err){
+            if (err) throw err;
+            res.redirect('/profile');
+        });
+    });
 };
