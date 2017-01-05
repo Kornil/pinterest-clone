@@ -21,13 +21,13 @@ module.exports = function(app) {
     });
 
     app.get('/delete/:id',function(req, res){
-        res.redirect('/profile');
+        res.send('deleting element..');
     });
 
     app.delete('/delete/:id', function(req, res){
         Image.findByIdAndRemove(req.params.id, function(err){
             if (err) throw err;
-            res.send('deleted');
+            res.redirect('/profile');
         });
     });
 };
