@@ -95,9 +95,10 @@
       };
     });
     $('.fa-times').on('click', function(){
-      $.delete( "/profile", { id: $(this).attr('id') }, function(){
-        console.log("element deleted");
-      }));
+      $.delete( "/profile", { id: $(this).attr('id'), function(){
+        console.log("element deleted")
+      } });
+    });
     </script>
   </body>
 </html>
