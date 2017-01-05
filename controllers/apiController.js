@@ -20,9 +20,9 @@ module.exports = function(app) {
             
     });
 
-    /*app.get('/profile/:id',function(req, res){
-        res.send('deleting element..');
-    });*/
+    app.get('/profile/:id',function(req, res){
+        res.render('profile');
+    });
 
     app.delete('/profile/:id', function(req, res){
         Image.findByIdAndRemove(req.params.id, function(err){
