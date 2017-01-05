@@ -77,10 +77,27 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
+    jQuery.each( [ "put", "delete" ], function( i, method ) {
+      jQuery[ method ] = function( url, data, callback, type ) {
+        if ( jQuery.isFunction( data ) ) {
+          type = type || callback;
+          callback = data;
+          data = undefined;
+        }
+
+        return jQuery.ajax({
+          url: url,
+          type: method,
+          dataType: type,
+          data: data,
+          success: callback
+        });
+      };
+    });
     $('.fa-times').on('click', function(){
-      $.delete( "/profile", { id: $(this).attr('id') } );
-      console.log("hey")
-    })
+      $.delete( "/profile", { id: $(this).attr('id') }, function(){
+        console.log("element deleted");
+      }));
     </script>
   </body>
 </html>
