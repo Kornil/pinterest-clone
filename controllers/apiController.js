@@ -21,7 +21,7 @@ module.exports = function(app) {
     });
 
     app.delete('/profile', function(req, res){
-        var Id = req.body.userId || req.query.userId;
+        var Id = req.body.id || req.query.id;
         Image.findByIdAndRemove(Id, function(err){
             if (err) throw err;
             res.redirect('/profile');
