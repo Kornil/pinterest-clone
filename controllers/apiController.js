@@ -21,7 +21,7 @@ module.exports = function(app) {
     });
 
     app.get('/profile/:id',function(req, res){
-        res.render('profile');
+        res.render('profile', { user: req.user, images: images});
     });
 
     app.delete('/profile/:id', function(req, res){
