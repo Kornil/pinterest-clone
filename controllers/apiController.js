@@ -24,6 +24,7 @@ module.exports = function(app) {
     app.delete('/profile', function(req, res){
         Image.findByIdAndRemove(req.body.id, function(err){
             if (err) throw err;
+            req.method = 'GET';
             res.redirect('/profile');
         });
     });
