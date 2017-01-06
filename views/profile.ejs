@@ -81,7 +81,7 @@
       xmlhttp = new XMLHttpRequest();
       xmlhttp.open("DELETE", '/profile', true);
       xmlhttp.setRequestHeader('Content-Type','application/json')
-      xmlhttp.send({'id': $(this).attr('id')});
+      xmlhttp.send('id': $(this).attr('id'));
     });
     /*function delete(){
       xmlhttp = new XMLHttpRequest();
