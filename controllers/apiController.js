@@ -1,3 +1,4 @@
+'use strict';
 var Image = require('../models/imageModel');
 var bodyParser = require('body-parser');
 
