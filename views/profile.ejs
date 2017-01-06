@@ -80,6 +80,7 @@
     $('.fa-times').click(function(){
       xmlhttp = new XMLHttpRequest();
       xmlhttp.open("DELETE", '/profile', true);
+      xmlhttp.setRequestHeader('Content-Type','application/json')
       xmlhttp.send({id: $(this).attr('id')});
     });
     /*function delete(){
