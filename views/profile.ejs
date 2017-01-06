@@ -78,17 +78,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
     $('.fa-times').click(function(){
-      /*xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("DELETE", '/profile');
-      xmlhttp.setRequestHeader('Content-Type','application/json;charset=UTF-8')
-      var id = $(this).attr('id');
-      var obj = {id: id};
-      xmlhttp.send(JSON.stringify(obj));*/
       var id = $(this).attr('id');
       $.ajax({
         url: '/profile',
         type: 'DELETE',
-        data: {id: id}
+        data: {id: id},
+        success: function(){
+          window.location.reload();
+        }
       });
     });
     </script>

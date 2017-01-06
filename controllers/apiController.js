@@ -17,15 +17,14 @@ module.exports = function(app) {
             newImage.save(function(err) {
                 if (err) throw err;
                 res.redirect('/profile');
-            });
-            
+            });  
     });
 
     app.delete('/profile', function(req, res){
         Image.findByIdAndRemove(req.body.id, function(err){
             if (err) throw err;
-            req.method = 'GET';
-            res.redirect('/profile');
         });
+        /*req.method = 'GET';
+        res.redirect('/profile');*/
     });
 };
