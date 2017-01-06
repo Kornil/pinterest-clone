@@ -86,7 +86,7 @@
       xmlhttp.send(JSON.stringify(obj));*/
       var id = $(this).attr('id');
       $.ajax({
-        url: '/config/delete',
+        url: '/profile',
         type: 'DELETE',
         data: {id: id}
       });
