@@ -23,8 +23,8 @@ module.exports = function(app) {
     app.delete('/profile', function(req, res){
         Image.findByIdAndRemove(req.body.id, function(err){
             if (err) throw err;
-            req = 'GET';
-            res.redirect('/profile');
+            /*req = 'GET';
+            res.redirect('/profile');*/
         });
     });
 };
