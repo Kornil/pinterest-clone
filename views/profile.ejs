@@ -82,10 +82,7 @@
       $.ajax({
         url: '/profile',
         type: 'DELETE',
-        data: {id: id},
-        complete: function(){
-          window.location.reload();
-        }
+        data: {id: id}
       });
     });
     </script>
