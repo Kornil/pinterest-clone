@@ -9,15 +9,15 @@ module.exports = function(app) {
 
     app.post('/profile', function(req, res){
         var newImage = Image({
-               username: req.user.username,
-               title: req.body.title,
-               imageLink: req.body.imageLink,
-               likes: 0
-           });            
-            newImage.save(function(err) {
-                if (err) throw err;
-                res.redirect('/profile');
-            });  
+                username: req.user.username,
+                title: req.body.title,
+                imageLink: req.body.imageLink,
+                likes: 0
+            });            
+        newImage.save(function(err) {
+            if (err) throw err;
+            res.redirect('/profile');
+        });  
     });
 
     app.delete('/profile/:id', function(req, res){
