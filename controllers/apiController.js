@@ -8,7 +8,6 @@ module.exports = function(app) {
     app.use(bodyParser.urlencoded({ extended: true }));
 
     app.post('/profile', function(req, res){
-        if(!req.body.id){
         var newImage = Image({
                username: req.user.username,
                title: req.body.title,
@@ -18,20 +17,13 @@ module.exports = function(app) {
             newImage.save(function(err) {
                 if (err) throw err;
                 res.redirect('/profile');
-            });
-        }else{
-            Image.findByIdAndRemove(req.body.id, function(err){
-                if (err) throw err;
-                res.redirect('/profile');
-            });
-        }
-        
-            res.redirect('/profile');
+            });  
     });
 
     app.delete('/profile', function(req, res){
-        Image.findByIdAndRemove(req.body.id, function(err){
+        Image.findByIdAndRemove(req.param.id, function(err){
             if (err) throw err;
+            res.redirect('/profile');
         });
     });
 };

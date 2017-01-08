@@ -80,10 +80,10 @@
     $('.fa-times').one('click', function(){
       var id = $(this).attr('id');
       $.ajax({
-        url: '/profile',
-        type: 'POST',
-        data: {id: id},        
-        /*complete: function(){
+        url: '/profile'+'?'+$.param({"Id": id}),
+        type: 'DELETE',
+        /*headers: {"Id": id},        
+        complete: function(){
           window.location.reload();
         }*/
       });
