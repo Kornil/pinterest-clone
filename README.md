@@ -5,7 +5,6 @@
 
 <ul><p>TODO</p>
 <li>like button!</li>
-<li>delete button</li>
 <li>share button</li>
 <li>modify button?</li>
 <li>upload something more than cats</li>
