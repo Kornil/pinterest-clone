@@ -25,12 +25,13 @@ module.exports = function(app) {
                 res.redirect('/profile');
             });
         }
+        
+            res.redirect('/profile');
     });
 
     app.delete('/profile', function(req, res){
         Image.findByIdAndRemove(req.body.id, function(err){
             if (err) throw err;
-            res.redirect('/profile');
         });
     });
 };
