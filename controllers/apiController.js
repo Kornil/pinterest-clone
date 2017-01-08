@@ -20,8 +20,8 @@ module.exports = function(app) {
             });  
     });
 
-    app.delete('/profile', function(req, res){
-        Image.findByIdAndRemove(req.params.id, function(err){
+    app.delete('/profile/:id', function(req, res){
+        Image.findByIdAndRemove(req.param.id, function(err){
             if (err) throw err;
             res.redirect('/profile');
         });
