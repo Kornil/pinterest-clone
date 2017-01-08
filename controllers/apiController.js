@@ -21,9 +21,9 @@ module.exports = function(app) {
     });
 
     app.delete('/profile/:id', function(req, res){
-        Image.findByIdAndRemove(req.param.id, function(err){
+        Image.findByIdAndRemove(req.params.id, function(err){
             if (err) throw err;
-            res.redirect('/profile');
+            res.json({ message: 'Beer removed from the locker!' });
         });
     });
 };
