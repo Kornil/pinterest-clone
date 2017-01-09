@@ -67,7 +67,7 @@
         //console.log("hello");
         $('.fa-retweet').on('click', function(){
           var id = $(this).attr('id');
-          $.post( "/profile/retweet, { id: id } );
+          $.post( '/profile/retweet', { id: id } );
         });
 
       }
