@@ -70,7 +70,8 @@
           //$.post( '/profile/retweet', { id: id } );
           $.ajax({
             url: '/profile/retweet',
-            type: 'POST',       
+            type: 'POST',
+            data: {id: id},     
             complete: function(){
               window.location.assign('/profile');
             }
