@@ -48,7 +48,7 @@
                 <h4> <%= images[i].title %> </h4>
                 <p class="user"><%= images[i].username %></p>
                 <p class="likes">
-                  <i class="fa fa-retweet" aria-hidden="true"></i>
+                  <i id="<%= images[i]._id %>" class="fa fa-retweet" aria-hidden="true"></i>
                   <i class="fa fa-heart" aria-hidden="true"></i> <%= images[i].likes %> </p>
                 <div style="clear: both"></div>
               </div>
@@ -64,7 +64,12 @@
     $(document).ready(function(){
       var user = "<%= (user) ? user.username : false %>" ;
       if(user !== "false"){
-        console.log("hello");
+        //console.log("hello");
+        $('.fa-retweet').on('click', function(){
+          var id = $(this).attr('id');
+          $.post( "/profile/retweet, { id: id } );
+        });
+
       }
     });
     </script>
