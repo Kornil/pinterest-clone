@@ -46,10 +46,22 @@ module.exports = function(app) {
     });
 
     app.post('/like', function(req, res){
-        Image.findByIdAndUpdate(req.body.id, {$inc: { likes: 1}, $push: { likedBy: req.body.id } }, function(err){
+
+        Image.findById(req.body.id, function(err, elem){
             if (err) throw err;
-            res.redirect('/index');
+            (elem.likedBy.includes(req.user.username)) ?
+
+            Image.findByIdAndUpdate(req.body.id, {$inc: { likes: 1}, $push: { likedBy: req.body.id } }, function(err){
+                if (err) throw err;
+                res.redirect('/index');
+            });
+
+            :
+
+            return;
+
         });
+
     });
 
 };
