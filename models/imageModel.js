@@ -6,7 +6,8 @@ var imageSchema = new Schema({
     username: String,
     title: String,
     imageLink: String,
-    likes: Number
+    likes: Number,
+    likedBy: []
 });
 
 var Images = mongoose.model("Images", imageSchema);

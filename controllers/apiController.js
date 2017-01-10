@@ -12,7 +12,8 @@ module.exports = function(app) {
                 username: req.user.username,
                 title: req.body.title,
                 imageLink: req.body.imageLink,
-                likes: 0
+                likes: 0,
+                likedBy: []
             });            
         newImage.save(function(err) {
             if (err) throw err;
@@ -34,7 +35,8 @@ module.exports = function(app) {
                 username: req.user.username,
                 title: originalImage.title,
                 imageLink: originalImage.imageLink,
-                likes: 0
+                likes: 0,
+                likedBy: []
             });
             retweet.save(function(err) {
                 if (err) throw err;
@@ -42,4 +44,12 @@ module.exports = function(app) {
             });
         });
     });
+
+    app.post('/like', function(req, res){
+        Image.findByIdAndUpdate(req.body.id, {$inc: { likes: 1} }, function(err){
+            if (err) throw err;
+            res.redirect('/index');
+        })
+    });
+
 };
