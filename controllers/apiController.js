@@ -49,16 +49,15 @@ module.exports = function(app) {
 
         Image.findById(req.body.id, function(err, elem){
             if (err) throw err;
-            (elem.likedBy.includes(req.user.username)) ?
-
-            Image.findByIdAndUpdate(req.body.id, {$inc: { likes: 1}, $push: { likedBy: req.body.id } }, function(err){
-                if (err) throw err;
-                res.redirect('/index');
-            });
-
-            :
-
-            return;
+            
+            if(elem.likedBy.includes(req.user.username)) {
+                Image.findByIdAndUpdate(req.body.id, {$inc: { likes: 1}, $push: { likedBy: req.body.id } }, function(err){
+                    if (err) throw err;
+                    res.redirect('/index');
+                });
+            }else{
+                res.send('failed')
+            }
 
         });
 
