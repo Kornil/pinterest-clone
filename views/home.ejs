@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-md-12">
         <% for(var i=0; i < images.length; i++) { %>
-        <% var liked = "";
+        <% var liked = ""; %>
         if(user){if(images[i].includes(user.username)){ liked = "red" }} %>
               <div class="thumbnail home">
                 <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
