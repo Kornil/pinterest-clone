@@ -49,7 +49,9 @@
                 <p class="user"><%= images[i].username %></p>
                 <p class="likes">
                   <i id="<%= images[i]._id %>" class="fa fa-retweet" aria-hidden="true"></i>
-                  <i id="<%= images[i]._id %>" class="fa fa-heart" aria-hidden="true"></i>
+                  <i id="<%= images[i]._id %>" class="fa fa-heart
+                    <%= (images[i].includes(user.username)) ? " red" : "" %>
+                    " aria-hidden="true"></i>
                 <%= images[i].likes %> </p>
                 <div style="clear: both"></div>
               </div>
