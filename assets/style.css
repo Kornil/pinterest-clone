@@ -48,6 +48,6 @@ p {
   color: #bd081c;
 }
 
-.fa-times:hover, .fa-retweet:hover, fa-heart:hover {
+.fa:hover {
   opacity: 0.8;
 }
