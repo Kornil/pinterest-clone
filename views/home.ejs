@@ -30,7 +30,7 @@
             <li class="active"><a href="#">Home</a></li>
 							<li>
 								<% if (!user) { %>
-									<a href="/login">Login</a>
+									<a href="/login">Login <i class="fa fa-twitter" aria-hidden="true"></i></a>
 								<% } else { %>
 									<a href="/profile"><%= user.username %></a>
 								<% } %>
