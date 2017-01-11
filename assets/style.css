@@ -9,7 +9,9 @@ p {
   font-size: 12px;
 }
 .user {
-  float: left;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
 }
 .likes {
   position: absolute;

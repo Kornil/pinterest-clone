@@ -64,7 +64,9 @@
           <div class="thumbnail">
             <i id="<%= images[i]._id %>" class="fa fa-times" aria-hidden="true"></i>
             <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
-            <h4> <%= images[i].title %> </h4>
+            <div class="user">
+              <h4> <%= images[i].title %> </h4>
+            </div>
             <p class="likes"><i class="fa fa-heart" aria-hidden="true"></i> <%= images[i].likes %> </p>
             <div style="clear: both"></div>
           </div>
