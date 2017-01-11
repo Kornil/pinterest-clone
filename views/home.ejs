@@ -42,7 +42,7 @@
     <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <% for(var i=images.length; i--) { %>
+        <% for(var i=images.length; i >= 0; i--) { %>
         <% var liked = ""; %>
         <% if(user){if(images[i].likedBy.includes(user.username)){ liked = "red" }} %>
               <div class="thumbnail home">
