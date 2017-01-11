@@ -12,8 +12,8 @@ module.exports = function(app) {
                 username: req.user.username,
                 title: req.body.title,
                 imageLink: req.body.imageLink,
-                likes: 0,
-                likedBy: []
+                likes: 1,
+                likedBy: [req.user.username]
             });            
         newImage.save(function(err) {
             if (err) throw err;
@@ -35,8 +35,8 @@ module.exports = function(app) {
                 username: req.user.username,
                 title: originalImage.title,
                 imageLink: originalImage.imageLink,
-                likes: 0,
-                likedBy: []
+                likes: 1,
+                likedBy: [req.user.username]
             });
             retweet.save(function(err) {
                 if (err) throw err;
