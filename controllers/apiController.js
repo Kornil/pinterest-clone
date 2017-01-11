@@ -56,7 +56,10 @@ module.exports = function(app) {
                     res.redirect('/index');
                 });
             }else{
-                res.send('failed')
+                Image.findByIdAndUpdate(req.body.id, {$inc: { likes: -1}, $pull: { likedBy: req.user.username } }, function(err){
+                    if (err) throw err;
+                    res.redirect('/index');
+                });
             }
 
         });
