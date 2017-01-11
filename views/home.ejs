@@ -43,15 +43,15 @@
     <div class="row">
       <div class="col-md-12">
         <% for(var i=0; i < images.length; i++) { %>
+        <% var liked = "";
+        if(user){if(images[i].includes(user.username)){ liked = "red" }} %>
               <div class="thumbnail home">
                 <img class="thumbnail_image" src="<%= images[i].imageLink %>" alt="<%= images[i].title %>" >
                 <h4> <%= images[i].title %> </h4>
                 <p class="user"><%= images[i].username %></p>
                 <p class="likes">
                   <i id="<%= images[i]._id %>" class="fa fa-retweet" aria-hidden="true"></i>
-                  <i id="<%= images[i]._id %>" class="fa fa-heart
-                     <%= if(user){if(images[i].includes(user.username)){return "red"}} %>
-                    " aria-hidden="true"></i>
+                  <i id="<%= images[i]._id %>" class="fa fa-heart <%= liked %>" aria-hidden="true"></i>
                 <%= images[i].likes %> </p>
                 <div style="clear: both"></div>
               </div>
